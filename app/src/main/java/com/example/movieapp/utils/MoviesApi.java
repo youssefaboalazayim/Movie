@@ -12,9 +12,9 @@ import retrofit2.http.Query;
 public interface MoviesApi {
 
     // search for movie
-    @GET
+    @GET("/3/search/movie")
     Call<MovieSearchResponse> searchMovie(
-            @Query("key") String key,
+            @Query("api_key") String key,
             @Query("query") String query,
             @Query("page") int page
     );

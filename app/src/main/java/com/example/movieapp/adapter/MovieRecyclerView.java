@@ -35,14 +35,14 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         ((MovieViewHolder)holder).title.setText(movieList.get(position).getTitle());
         ((MovieViewHolder)holder).release_date.setText(movieList.get(position).getRelease_date());
-        ((MovieViewHolder)holder).duration.setText(movieList.get(position).getRuntime());
+        ((MovieViewHolder)holder).duration.setText(movieList.get(position).getVote_average()+ "");
 
         // vote average is over 10 and our rating bar over 5 dividing 2
         ((MovieViewHolder)holder).ratingBar.setRating((movieList.get(position).getVote_average())/2);
 
         // Image view using glide library
 
-        Glide.with(holder.itemView.getContext()).load(movieList.get(position).getPoster_path())
+        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500/"+movieList.get(position).getPoster_path())
                 .into((((MovieViewHolder)holder).imageView));
 
     }
